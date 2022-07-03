@@ -1,0 +1,11 @@
+batch:
+  accounting-dates:
+    from: 2022-01-01
+    to: 2022-01-04
+  types:
+    - daily_transactions
+    - daily_client
+  entities:
+    - London
+    - Geneva
+    - Singapore
