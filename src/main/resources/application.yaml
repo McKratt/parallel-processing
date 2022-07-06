@@ -5,6 +5,9 @@ batch:
   types:
     - daily_transactions
     - daily_client
+    - daily_ca
+    - daily_sell
+    - daily_buy
   entities:
     - London
     - Geneva

@@ -41,8 +41,8 @@ public class ReactiveBatchApplication implements CommandLineRunner {
                                         .doOnNext(entity -> log.info(format("- - Begin treatment for Report %s for Entity %s", type, entity)))
                                         .map(entity -> factory.createTask(date, type, entity).run())
                                         .map(mono -> mono.subscribe(report -> log.info("- - - - " + report)))
-
                                 )
+                                .doFinally(s -> log.info(format("Treated all the report types for %s!", date)))
                                 .blockLast()
                 )
                 .doFinally(s -> log.info("All Reports done !"))
