@@ -10,6 +10,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import reactor.core.scheduler.Schedulers;
 
+import java.time.Duration;
+
 import static java.lang.String.format;
 
 @Slf4j
@@ -30,6 +32,7 @@ public class ReactiveBatchApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        var start = System.nanoTime();
         properties.getAccountingDatesFlux()
                 .doOnNext(date -> log.info("Begin treatment for date :" + date))
                 .mapNotNull(date ->
@@ -46,6 +49,12 @@ public class ReactiveBatchApplication implements CommandLineRunner {
                                 .blockLast()
                 )
                 .doFinally(s -> log.info("All Reports done !"))
+                .doFinally(s -> {
+                    var stop = System.nanoTime();
+                    var nanos = stop - start;
+                    var duration = Duration.ofNanos(nanos);
+                    log.info("Elapsed time = {} s and {} ms ({})", duration.toSecondsPart(), duration.toMillisPart(), nanos);
+                })
                 .subscribe();
     }
 }
