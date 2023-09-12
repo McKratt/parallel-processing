@@ -1,4 +1,4 @@
-package net.bakaar.batch;
+package net.bakaar.batch.reactive;
 
 import reactor.core.publisher.Mono;
 

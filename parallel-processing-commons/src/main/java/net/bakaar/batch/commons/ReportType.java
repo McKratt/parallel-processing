@@ -1,4 +1,4 @@
-package net.bakaar.batch;
+package net.bakaar.batch.commons;
 
 public enum ReportType {
     DAILY_TRANSACTIONS,

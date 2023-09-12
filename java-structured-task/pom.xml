@@ -8,26 +8,12 @@
         <artifactId>parallel-processing</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>reactive-paralell-task</artifactId>
-    <properties>
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <artifactId>java-structured-task</artifactId>
     <dependencies>
         <dependency>
             <groupId>net.bakaar</groupId>
             <artifactId>parallel-processing-commons</artifactId>
             <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

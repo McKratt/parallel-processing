@@ -1,6 +1,7 @@
-package net.bakaar.batch;
+package net.bakaar.batch.reactive;
 
 import lombok.extern.slf4j.Slf4j;
+import net.bakaar.batch.commons.ReportType;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
@@ -11,7 +12,7 @@ import static java.lang.String.format;
 
 @Slf4j
 @Component
-public class TaskFactory {
+public class ReactiveTaskFactory {
     public ReactiveTask<String> createTask(LocalDate date, ReportType type, String entity) {
         return new ReactiveTask<>(() -> {
             try {

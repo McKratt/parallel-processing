@@ -14,6 +14,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>reactive-paralell-task</module>
+        <module>java-structured-task</module>
+        <module>parallel-processing-commons</module>
     </modules>
     <properties>
         <java.version>20</java.version>

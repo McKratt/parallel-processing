@@ -1,4 +1,4 @@
-package net.bakaar.batch;
+package net.bakaar.batch.reactive;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,11 +17,11 @@ import static java.lang.String.format;
 @Slf4j
 @RequiredArgsConstructor
 @SpringBootApplication
-@EnableConfigurationProperties(BatchProperties.class)
+@EnableConfigurationProperties(ReactiveBatchProperties.class)
 public class ReactiveBatchApplication implements CommandLineRunner {
 
-    private final BatchProperties properties;
-    private final TaskFactory factory;
+    private final ReactiveBatchProperties properties;
+    private final ReactiveTaskFactory factory;
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(ReactiveBatchApplication.class)
