@@ -13,7 +13,7 @@ import static java.lang.String.format;
 @Component
 public class TaskFactory {
     public ReactiveTask<String> createTask(LocalDate date, ReportType type, String entity) {
-        return new ReactiveTask(() -> {
+        return new ReactiveTask<>(() -> {
             try {
                 log.info(format("- - - Call remote for Entity %s and Report %s and the Accounting Date : %s", entity, type, date));
                 // Simulate a remote blocking call which is not immediate.

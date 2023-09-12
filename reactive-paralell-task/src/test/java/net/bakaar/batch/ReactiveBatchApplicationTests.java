@@ -8,5 +8,6 @@ class ReactiveBatchApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 }
